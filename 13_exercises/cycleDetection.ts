@@ -13,19 +13,19 @@ nodeThree.next = nodeFour;
 nodeFour.next = nodeFive;
 nodeFive.next = nodeOne;
 
-// function naiveSolution(head: INode = nodeOne): INode | boolean {
-//   const seenNodes = new Set();
-//   let currentNode = head;
+function naiveSolution(head: INode = nodeOne): INode | boolean {
+  const seenNodes = new Set();
+  let currentNode = head;
 
-//   while (!seenNodes.has(currentNode)) {
-//     if (!currentNode?.next) return false;
+  while (!seenNodes.has(currentNode)) {
+    if (!currentNode?.next) return false;
 
-//     seenNodes.add(currentNode);
-//     currentNode = currentNode.next;
-//   }
+    seenNodes.add(currentNode);
+    currentNode = currentNode.next;
+  }
 
-//   return currentNode;
-// }
+  return currentNode;
+}
 
-// console.log(naiveSolution());
+console.log(naiveSolution());
 console.log(floydsAlgorithm(nodeOne));
