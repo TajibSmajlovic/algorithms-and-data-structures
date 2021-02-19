@@ -1,17 +1,17 @@
-export interface IListNode {
-  value: number;
-  prev: IListNode;
-  next: IListNode;
-  children: IListNode;
+export interface IListNode<T> {
+  value: T;
+  prev: IListNode<T>;
+  next: IListNode<T>;
+  children: IListNode<T>;
 }
 
-class ListNode implements IListNode {
-  value: number;
-  prev: IListNode;
-  next: IListNode;
-  children: IListNode;
+class ListNode<T> implements IListNode<T> {
+  value: T;
+  prev: IListNode<T>;
+  next: IListNode<T>;
+  children: IListNode<T>;
 
-  constructor(value) {
+  constructor(value: T) {
     this.value = value;
     this.prev = null;
     this.next = null;
@@ -19,19 +19,19 @@ class ListNode implements IListNode {
   }
 }
 
-export default class DoublyLinkedList {
-  head: IListNode;
-  tail: IListNode;
+export default class DoublyLinkedList<T> {
+  head: IListNode<T>;
+  tail: IListNode<T>;
   length: number;
 
-  constructor(value) {
-    this.head = new ListNode(value);
+  constructor(value: T) {
+    this.head = new ListNode<T>(value);
     this.tail = this.head;
     this.length = 1;
   }
 
-  append(value) {
-    const node = new ListNode(value);
+  append(value: T) {
+    const node = new ListNode<T>(value);
 
     node.prev = this.tail;
     this.tail.next = node;
@@ -41,8 +41,8 @@ export default class DoublyLinkedList {
     return this;
   }
 
-  prepend(value) {
-    const node = new ListNode(value);
+  prepend(value: T) {
+    const node = new ListNode<T>(value);
 
     node.next = this.head;
     this.head.prev = node;
@@ -52,7 +52,7 @@ export default class DoublyLinkedList {
     return this;
   }
 
-  addChildren(index: number, children: IListNode) {
+  addChildren(index: number, children: IListNode<T>) {
     // TODO:
     /// add guards
 
