@@ -1,8 +1,9 @@
-interface IStack<T> {
+export interface IStack<T> {
   push(item: T): void;
   pop(): T | undefined;
   peek(): T | undefined;
   size(): number;
+  get(): T[]; // needed only for implementQueueWithStacks exercise
 }
 
 export default class Stack<T> implements IStack<T> {
@@ -27,5 +28,9 @@ export default class Stack<T> implements IStack<T> {
 
   size(): number {
     return this.storage.length;
+  }
+
+  get() {
+    return this.storage; // needed only for implementQueueWithStacks exercise
   }
 }
