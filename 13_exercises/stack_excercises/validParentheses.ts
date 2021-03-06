@@ -1,4 +1,4 @@
-import Stack from "./dataStructures/stack";
+import Stack from "../dataStructures/stack";
 
 const string1 = "{([)]}"; // -> FALSE
 const string2 = "{[()]}"; // -> TRUE

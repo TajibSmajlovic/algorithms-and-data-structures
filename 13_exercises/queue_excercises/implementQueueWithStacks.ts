@@ -1,4 +1,4 @@
-import Stack, { IStack } from "./dataStructures/stack";
+import Stack, { IStack } from "../dataStructures/stack";
 
 class QueueWithStack<T> {
   private in: IStack<T>;

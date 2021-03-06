@@ -1,4 +1,4 @@
-import Stack from "./dataStructures/stack";
+import Stack from "../dataStructures/stack";
 
 const str1 = "(ab(c)d";
 const str2 = ")))(((";
